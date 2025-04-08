@@ -93,8 +93,17 @@ public class FXMLDocumentController implements Initializable {
         } else {
             String checkUsername = "SELECT * FROM admin WHERE username = ?";
             connect = Database.connectDB();
+            
 
             try {
+                if(!register_checkBox.isVisible()){
+                    if(!register_showPassword.getText().equals(register_password.getText())){
+                        register_showPassword.setText(register_password.getText());
+                        
+                    }
+                }else{
+                    if(!register_showPassword.getText())
+                }
                 // Check if the username already exists
                 prepare = connect.prepareStatement(checkUsername);
                 prepare.setString(1, register_username.getText());
