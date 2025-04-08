@@ -102,6 +102,10 @@ public class FXMLDocumentController implements Initializable {
 
                 if (result.next()) {
                     alert.errorMessage(register_username.getText() + " is already registered!");
+                } else if (register_password.getText().length() < 8) {
+                    // CONDUCTION OF CHECKING IF USER INSERT LESS THAN 8 DIGITAL
+                    alert.errorMessage("Invalid password, at least 8 characters needs");
+
                 } else {
                     String insertDate = "INSERT INTO admin (email, username, password, date) VALUES (?, ?, ?, ?)";
 
@@ -118,14 +122,24 @@ public class FXMLDocumentController implements Initializable {
                     prepare.executeUpdate();
 
                     alert.successMessage("Registered Successfully!!");
-
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
-
+    public void register_ShowPassword(){
+        if(register_checkBox.isSelected()){           
+            register_showPassword.setText(register_password.getText());
+            register_showPassword.setVisible(true);
+            register_password.setVisible(false);
+        }else{
+            register_password.setText(register_showPassword.getText());
+            register_showPassword.setVisible(false);
+            register_password.setVisible(true);
+        }
+        
+    }
     public void switchForm(ActionEvent event) {
 
         if (event.getSource() == login_registerHere) {

@@ -84,7 +84,7 @@
                         <String fx:value="radius" />
                      </styleClass>
                   </PasswordField>
-                  <CheckBox fx:id="register_checkBox" layoutX="39.0" layoutY="294.0" mnemonicParsing="false" text="Show password" />
+                  <CheckBox fx:id="register_checkBox" layoutX="39.0" layoutY="294.0" mnemonicParsing="false" onAction="#register_ShowPassword" text="Show password" />
                   <Button fx:id="register_signupBtn" layoutX="40.0" layoutY="323.0" mnemonicParsing="false" onAction="#registerAccount" prefHeight="40.0" prefWidth="250.0" styleClass="btn-1" stylesheets="@../design/PageDesign.css" text="Login" />
                   <FontAwesomeIcon fill="#188ba7" layoutX="122.0" layoutY="476.0" size="6em" />
                   <Label layoutX="57.0" layoutY="501.0" text="Already have an account" />
