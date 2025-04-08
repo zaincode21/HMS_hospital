@@ -7,6 +7,8 @@ package hospitalmanagementsystem;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.Date;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
@@ -27,8 +29,7 @@ import javafx.scene.layout.AnchorPane;
  * @author serge
  */
 public class FXMLDocumentController implements Initializable {
-    
-  
+
     @FXML
     private CheckBox login_fcheckBox;
 
@@ -76,53 +77,71 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private TextField register_username;
-    
-      // DATABASE TOOLS 
+
+    // DATABASE TOOLS 
     private Connection connect;
     private PreparedStatement prepare;
     private ResultSet result;
-    
-   
+
     private final AlertMessage alert = new AlertMessage();
-    
-    public void registerAccount(){
-        if(register_email.getText().isEmpty()
+
+    public void registerAccount() {
+        if (register_email.getText().isEmpty()
                 || register_username.getText().isEmpty()
-                || register_password.getText().isEmpty()){
-            alert.errorMessage("please fill all fields");  
-        }else{
-            String checkUsername = "SELECT * FROM admin WHERE username = ? AND password = ?";           
+                || register_password.getText().isEmpty()) {
+            alert.errorMessage("Please fill all fields");
+        } else {
+            String checkUsername = "SELECT * FROM admin WHERE username = ?";
             connect = Database.connectDB();
-            
-            try{
+
+            try {
+                // Check if the username already exists
                 prepare = connect.prepareStatement(checkUsername);
+                prepare.setString(1, register_username.getText());
                 result = prepare.executeQuery();
-                
-                if(result.next()){
-                    alert.errorMessage(register_username.getText()+"is already exist!");
-                }else{
-                    String insertData ="INSERT INTO admin (email,username,password,date) values(?,?,?,?)";
+
+                if (result.next()) {
+                    alert.errorMessage(register_username.getText() + " is already registered!");
+                } else {
+                    String insertDate = "INSERT INTO admin (email, username, password, date) VALUES (?, ?, ?, ?)";
+
+                    // Get the current date
+                    java.util.Date date = new java.util.Date();
+                    java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+
+                    prepare = connect.prepareStatement(insertDate);
+                    prepare.setString(1, register_email.getText());
+                    prepare.setString(2, register_username.getText());
+                    prepare.setString(3, register_password.getText());
+                    prepare.setString(4, String.valueOf(sqlDate));
+
+                    prepare.executeUpdate();
+
+                    alert.successMessage("Registered Successfully!!");
+
                 }
-            }catch(Exception e) {e.printStackTrace();}
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        
     }
-      
-    public void switchForm(ActionEvent event){
-        
-    if(event.getSource() == login_registerHere){
-        //REGISTRATION FORM WILL SHOW
-        login_form.setVisible(false);
-        register_form.setVisible(true);
-    }else if(event.getSource() == register_loginHere){
-        //LOGIN FORM WILL SHOW
-        login_form.setVisible(true);
-        register_form.setVisible(false);
+
+    public void switchForm(ActionEvent event) {
+
+        if (event.getSource() == login_registerHere) {
+            //REGISTRATION FORM WILL SHOW
+            login_form.setVisible(false);
+            register_form.setVisible(true);
+        } else if (event.getSource() == register_loginHere) {
+            //LOGIN FORM WILL SHOW
+            login_form.setVisible(true);
+            register_form.setVisible(false);
+        }
     }
-    }
-   @Override
+
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    } 
-    
+    }
+
 }
