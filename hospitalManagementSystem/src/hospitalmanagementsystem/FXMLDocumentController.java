@@ -122,11 +122,22 @@ public class FXMLDocumentController implements Initializable {
                     prepare.executeUpdate();
 
                     alert.successMessage("Registered Successfully!!");
+                    registerClear();
+                    
+                    login_form.setVisible(true);
+                    register_form.setVisible(false);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
+    public void registerClear(){
+        register_email.clear();
+        register_username.clear();
+        register_password.clear();
+        register_showPassword.clear();
+       
     }
     public void register_ShowPassword(){
         if(register_checkBox.isSelected()){           
