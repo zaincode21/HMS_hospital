@@ -84,6 +84,30 @@ public class FXMLDocumentController implements Initializable {
     private ResultSet result;
 
     private final AlertMessage alert = new AlertMessage();
+    
+    public void logininAccount(){
+        if(login_usename.getText().isEmpty()
+                ||login_password.getText().isEmpty()){
+            alert.errorMessage("Incorrect Username / Password");           
+        }else{
+            String checkUsername ="SELECT * admin WHERE username = ? AND password = ?";
+            
+            connect = Database.connectDB();
+            
+            try{
+                prepare = connect.prepareStatement(checkUsername);
+                prepare.setString(1,login_usename.getText());
+                prepare.setString(2,login_password.getText());        
+                result = prepare.executeQuery();
+                
+                if(result.next()){
+                    alert.successMessage("Registered Successfully!!");
+                }else{
+                    alert.errorMessage("incorrect username/password");
+                }
+            }catch(Exception e){e.printStackTrace();}
+        }
+    }
 
     public void registerAccount() {
         if (register_email.getText().isEmpty()
@@ -96,13 +120,15 @@ public class FXMLDocumentController implements Initializable {
             
 
             try {
-                if(!register_checkBox.isVisible()){
+                if(! register_showPassword.isVisible()){
                     if(!register_showPassword.getText().equals(register_password.getText())){
                         register_showPassword.setText(register_password.getText());
                         
                     }
                 }else{
-                    if(!register_showPassword.getText())
+                    if(!register_showPassword.getText().equals(register_password.getText())){
+                        register_password.setText(register_showPassword.getText());
+                    }
                 }
                 // Check if the username already exists
                 prepare = connect.prepareStatement(checkUsername);

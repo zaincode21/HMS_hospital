@@ -43,14 +43,14 @@
                         <String fx:value="radius" />
                      </styleClass></PasswordField>
                   <CheckBox fx:id="login_fcheckBox" layoutX="39.0" layoutY="255.0" mnemonicParsing="false" text="Show password" />
-                  <Button fx:id="login_loginBtn" layoutX="40.0" layoutY="287.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" styleClass="btn-1" stylesheets="@../design/PageDesign.css" text="Login" />
+                  <Button fx:id="login_loginBtn" layoutX="40.0" layoutY="287.0" mnemonicParsing="false" onAction="#logininAccount" prefHeight="40.0" prefWidth="250.0" styleClass="btn-1" stylesheets="@../design/PageDesign.css" text="Login" />
                   <FontAwesomeIcon fill="#188ba7" layoutX="125.0" layoutY="427.0" size="6em" />
                   <ComboBox fx:id="login_user" layoutX="90.0" layoutY="459.0" prefHeight="30.0" prefWidth="150.0" promptText="Select User" />
                   <Label layoutX="69.0" layoutY="501.0" text="Have no account yet?" />
                   <Hyperlink fx:id="login_registerHere" layoutX="180.0" layoutY="498.0" onAction="#switchForm" text="Register here!" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="register_form" layoutX="10.0" layoutY="10.0" prefHeight="550.0" prefWidth="330.0" styleClass="white-bg" stylesheets="@../design/PageDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="register_form" layoutX="10.0" layoutY="10.0" prefHeight="550.0" prefWidth="330.0" styleClass="white-bg" stylesheets="@../design/PageDesign.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <FontAwesomeIcon fill="#188ba7" glyphName="USER_PLUS" layoutX="130.0" layoutY="91.0" size="5em" />
                   <Label layoutX="97.0" layoutY="94.0" text="Register Account">
