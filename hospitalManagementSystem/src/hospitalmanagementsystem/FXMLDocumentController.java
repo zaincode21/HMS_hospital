@@ -85,25 +85,27 @@ public class FXMLDocumentController implements Initializable {
 
     private final AlertMessage alert = new AlertMessage();
     
-    public void logininAccount(){
+    public void loginAccount(){
         if(login_usename.getText().isEmpty()
                 ||login_password.getText().isEmpty()){
             alert.errorMessage("Incorrect Username / Password");           
         }else{
-            String checkUsername ="SELECT * admin WHERE username = ? AND password = ?";
+            String checkUsername = "SELECT * FROM admin WHERE username = ? AND password = ?";
+
             
             connect = Database.connectDB();
             
             try{
                 prepare = connect.prepareStatement(checkUsername);
-                prepare.setString(1,login_usename.getText());
-                prepare.setString(2,login_password.getText());        
+                prepare.setString(1, login_usename.getText());
+                prepare.setString(2, login_password.getText());
                 result = prepare.executeQuery();
-                
-                if(result.next()){
-                    alert.successMessage("Registered Successfully!!");
-                }else{
-                    alert.errorMessage("incorrect username/password");
+
+                if (result.next()) {
+                    alert.successMessage("Login successfully!");
+
+                } else {
+                    alert.errorMessage("incorrect USername/password");
                 }
             }catch(Exception e){e.printStackTrace();}
         }
