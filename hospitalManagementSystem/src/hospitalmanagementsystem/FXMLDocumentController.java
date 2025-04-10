@@ -31,7 +31,7 @@ import javafx.scene.layout.AnchorPane;
 public class FXMLDocumentController implements Initializable {
 
     @FXML
-    private CheckBox login_fcheckBox;
+    private CheckBox login_checkBox;
 
     @FXML
     private AnchorPane login_form;
@@ -41,6 +41,8 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private PasswordField login_password;
+    @FXML
+    private TextField login_showpassword;
 
     @FXML
     private Hyperlink login_registerHere;
@@ -84,18 +86,26 @@ public class FXMLDocumentController implements Initializable {
     private ResultSet result;
 
     private final AlertMessage alert = new AlertMessage();
-    
-    public void loginAccount(){
-        if(login_usename.getText().isEmpty()
-                ||login_password.getText().isEmpty()){
-            alert.errorMessage("Incorrect Username / Password");           
-        }else{
+
+    public void loginAccount() {
+        if (login_usename.getText().isEmpty()
+                || login_password.getText().isEmpty()) {
+            alert.errorMessage("Incorrect Username / Password");
+        } else {
             String checkUsername = "SELECT * FROM admin WHERE username = ? AND password = ?";
 
-            
             connect = Database.connectDB();
-            
-            try{
+
+            try {
+                if(!login_password.isVisible()){
+                    if(!login_showpassword.getText().equals(login_password.getText())){
+                        login_showpassword.setText(login_password.getText());
+                    }else{
+                        if(!login_showpassword.getText().equals(login_password.getText())){
+                            login_password.setText(login_showpassword.getText());
+                        }
+                    }
+                }
                 prepare = connect.prepareStatement(checkUsername);
                 prepare.setString(1, login_usename.getText());
                 prepare.setString(2, login_password.getText());
@@ -107,7 +117,22 @@ public class FXMLDocumentController implements Initializable {
                 } else {
                     alert.errorMessage("incorrect USername/password");
                 }
-            }catch(Exception e){e.printStackTrace();}
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    //SHOW ME PASSWORD ON LOGIN PAGE
+    public void loginShowPassword() {
+        if (login_checkBox.isSelected()) {
+            login_showpassword.setText(login_password.getText());
+            login_showpassword.setVisible(true);
+            login_password.setVisible(false);
+        } else {
+            login_password.setText(login_showpassword.getText());
+            login_showpassword.setVisible(false);
+            login_password.setVisible(true);
         }
     }
 
@@ -119,16 +144,15 @@ public class FXMLDocumentController implements Initializable {
         } else {
             String checkUsername = "SELECT * FROM admin WHERE username = ?";
             connect = Database.connectDB();
-            
 
             try {
-                if(! register_showPassword.isVisible()){
-                    if(!register_showPassword.getText().equals(register_password.getText())){
+                if (!register_showPassword.isVisible()) {
+                    if (!register_showPassword.getText().equals(register_password.getText())) {
                         register_showPassword.setText(register_password.getText());
-                        
+
                     }
-                }else{
-                    if(!register_showPassword.getText().equals(register_password.getText())){
+                } else {
+                    if (!register_showPassword.getText().equals(register_password.getText())) {
                         register_password.setText(register_showPassword.getText());
                     }
                 }
@@ -160,7 +184,7 @@ public class FXMLDocumentController implements Initializable {
 
                     alert.successMessage("Registered Successfully!!");
                     registerClear();
-                    
+
                     login_form.setVisible(true);
                     register_form.setVisible(false);
                 }
@@ -169,25 +193,28 @@ public class FXMLDocumentController implements Initializable {
             }
         }
     }
-    public void registerClear(){
+
+    public void registerClear() {
         register_email.clear();
         register_username.clear();
         register_password.clear();
         register_showPassword.clear();
-       
+
     }
-    public void register_ShowPassword(){
-        if(register_checkBox.isSelected()){           
+
+    public void register_ShowPassword() {
+        if (register_checkBox.isSelected()) {
             register_showPassword.setText(register_password.getText());
             register_showPassword.setVisible(true);
             register_password.setVisible(false);
-        }else{
+        } else {
             register_password.setText(register_showPassword.getText());
             register_showPassword.setVisible(false);
             register_password.setVisible(true);
         }
-        
+
     }
+
     public void switchForm(ActionEvent event) {
 
         if (event.getSource() == login_registerHere) {

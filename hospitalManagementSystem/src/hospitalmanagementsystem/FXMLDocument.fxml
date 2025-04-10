@@ -31,7 +31,7 @@
                         <String fx:value="textfield-1" />
                         <String fx:value="white-bg" />
                      </styleClass></TextField>
-                  <TextField layoutX="39.0" layoutY="219.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" stylesheets="@../design/PageDesign.css">
+                  <TextField fx:id="login_showpassword" layoutX="39.0" layoutY="219.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" stylesheets="@../design/PageDesign.css">
                      <styleClass>
                         <String fx:value="textfield-1" />
                         <String fx:value="white-bg" />
@@ -42,7 +42,7 @@
                         <String fx:value="white-bg" />
                         <String fx:value="radius" />
                      </styleClass></PasswordField>
-                  <CheckBox fx:id="login_fcheckBox" layoutX="39.0" layoutY="255.0" mnemonicParsing="false" onAction="#register_ShowPassword" text="Show password" />
+                  <CheckBox fx:id="login_checkBox" layoutX="39.0" layoutY="255.0" mnemonicParsing="false" onAction="#loginShowPassword" text="Show password" />
                   <Button fx:id="login_loginBtn" layoutX="40.0" layoutY="287.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="40.0" prefWidth="250.0" styleClass="btn-1" stylesheets="@../design/PageDesign.css" text="Login" />
                   <FontAwesomeIcon fill="#188ba7" layoutX="125.0" layoutY="427.0" size="6em" />
                   <ComboBox fx:id="login_user" layoutX="90.0" layoutY="459.0" prefHeight="30.0" prefWidth="150.0" promptText="Select User" />
