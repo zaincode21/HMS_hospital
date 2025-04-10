@@ -98,6 +98,39 @@ public class DoctorPageController implements Initializable {
 
     @FXML
     void loginAccount() {
+        if (login_doctorID.getText().isEmpty()
+                || login_password.getText().isEmpty()) {
+            alert.errorMessage("Incorrect Username/Password");
+        } else {
+            String sql = "SELECT * FROM doctor WHERE doctor_id = ? AND password = ? AND date_delete IS NULL";
+
+            connect = Database.connectDB();
+
+            try {
+                // CHECK IF THE STATUS OF THE DOCTOR IF CONFIRM
+
+                String checkStatus = "SELECT status FROM doctor WHERE status ='Confirm'";
+
+                prepare = connect.prepareStatement(checkStatus);
+                result = prepare.executeQuery();
+
+                if (!result.next()) {
+                    prepare = connect.prepareStatement(sql);
+                    prepare.setString(1, login_doctorID.getText());
+                    prepare.setString(2, login_password.getText());
+                    
+                    result = prepare.executeQuery();
+                    if(result.next()){
+                        alert.successMessage("Login successfully");
+                    }
+                }else{
+                    alert.errorMessage("you need the confirmation of the Admin");
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 
