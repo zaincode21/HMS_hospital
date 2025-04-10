@@ -11,10 +11,17 @@ import java.sql.Date;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -23,6 +30,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  *
@@ -97,11 +105,11 @@ public class FXMLDocumentController implements Initializable {
             connect = Database.connectDB();
 
             try {
-                if(!login_password.isVisible()){
-                    if(!login_showpassword.getText().equals(login_password.getText())){
+                if (!login_password.isVisible()) {
+                    if (!login_showpassword.getText().equals(login_password.getText())) {
                         login_showpassword.setText(login_password.getText());
-                    }else{
-                        if(!login_showpassword.getText().equals(login_password.getText())){
+                    } else {
+                        if (!login_showpassword.getText().equals(login_password.getText())) {
                             login_password.setText(login_showpassword.getText());
                         }
                     }
@@ -215,6 +223,62 @@ public class FXMLDocumentController implements Initializable {
 
     }
 
+    public void userList() {
+
+        List<String> listU = new ArrayList<>();
+
+        for (String data : Users.user) {
+            listU.add(data);
+        }
+        ObservableList listData = FXCollections.observableList(listU);
+        login_user.setItems(listData);
+    }
+
+    public void switchPage() {
+        if (login_user.getSelectionModel().getSelectedItem() == "Admin Portal") {
+
+            try {
+
+                Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+                Stage stage = new Stage();
+
+                stage.setTitle("Hospital management system");
+                
+                stage.setMinWidth(340);
+                stage.setMinHeight(580);
+
+                stage.setScene(new Scene(root));
+                stage.show();
+                
+               
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else if (login_user.getSelectionModel().getSelectedItem() == "Doctor Portal") {
+             try {
+
+                Parent root = FXMLLoader.load(getClass().getResource("DoctorPage.fxml"));
+                Stage stage = new Stage();
+
+                stage.setTitle("Hospital management system");
+                
+                stage.setMinWidth(340);
+                stage.setMinHeight(580);
+
+                stage.setScene(new Scene(root));
+
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } else if (login_user.getSelectionModel().getSelectedItem() == "Patient Portal") {
+
+        }
+         login_user.getScene().getWindow().hide();
+    }
+
     public void switchForm(ActionEvent event) {
 
         if (event.getSource() == login_registerHere) {
@@ -230,7 +294,7 @@ public class FXMLDocumentController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        userList();
     }
 
 }
