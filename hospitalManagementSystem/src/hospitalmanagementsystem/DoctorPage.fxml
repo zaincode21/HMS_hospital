@@ -26,7 +26,7 @@
                      </font>
                   </Label>
                   <Label layoutX="123.0" layoutY="119.0" text="Doctor Portal" />
-                  <TextField fx:id="login_doctorID" layoutX="40.0" layoutY="182.0" prefHeight="30.0" prefWidth="250.0" promptText="Doctor ID" stylesheets="@../design/PageDesign.css">
+                  <TextField fx:id="login_doctorID" layoutX="40.0" layoutY="182.0" onAction="#loginAccount" prefHeight="30.0" prefWidth="250.0" promptText="Doctor ID" stylesheets="@../design/PageDesign.css">
                      <styleClass>
                         <String fx:value="textfield-2" />
                         <String fx:value="white-bg" />
@@ -38,7 +38,7 @@
                         <String fx:value="white-bg" />
                      </styleClass>
                   </TextField>
-                  <PasswordField fx:id="login_password" layoutX="39.0" layoutY="219.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" stylesheets="@../design/PageDesign.css">
+                  <PasswordField fx:id="login_password" layoutX="39.0" layoutY="219.0" onAction="#loginAccount" prefHeight="30.0" prefWidth="250.0" promptText="Password" stylesheets="@../design/PageDesign.css">
                      <styleClass>
                         <String fx:value="textfield-2" />
                         <String fx:value="white-bg" />

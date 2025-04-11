@@ -100,31 +100,44 @@ public class DoctorPageController implements Initializable {
     void loginAccount() {
         if (login_doctorID.getText().isEmpty()
                 || login_password.getText().isEmpty()) {
-            alert.errorMessage("Incorrect Username/Password");
+            alert.errorMessage("Incorrect Username/password");
         } else {
-            String sql = "SELECT * FROM doctor WHERE doctor_id = ? AND password = ? AND date_delete IS NULL";
-
+            String sql = "SELECT * FROM doctor WHERE doctor_id = ? AND password = ? AND delete_date  is NULL";
             connect = Database.connectDB();
 
             try {
-                // CHECK IF THE STATUS OF THE DOCTOR IF CONFIRM
-
-                String checkStatus = "SELECT status FROM doctor WHERE status ='Confirm'";
+                String checkStatus = "SELECT status FROM doctor WHERE doctor_id = '"
+                        + login_doctorID.getText() + "'AND password = '"
+                        + login_password.getText() + "' AND status='Confirm'";
 
                 prepare = connect.prepareStatement(checkStatus);
                 result = prepare.executeQuery();
 
-                if (!result.next()) {
+                if (result.next()) {
+                    alert.errorMessage("Need the confirmition of the admin");
+                    
+                    if (!login_password.isVisible()) {
+                        if (!login_showpassword.getText().equals(login_password.getText())) {
+                            login_showpassword.setText(login_password.getText());
+                        } else {
+                            if (!login_showpassword.getText().equals(login_password.getText())) {
+                                login_password.setText(login_showpassword.getText());
+                            }
+                        }
+                    }
+                    
+                } else {
                     prepare = connect.prepareStatement(sql);
                     prepare.setString(1, login_doctorID.getText());
                     prepare.setString(2, login_password.getText());
-                    
+
                     result = prepare.executeQuery();
-                    if(result.next()){
-                        alert.successMessage("Login successfully");
+
+                    if (result.next()) {
+                        alert.successMessage("LOgin Succesfully");
+                    } else {
+                        alert.errorMessage("Incorrect Username/Password");
                     }
-                }else{
-                    alert.errorMessage("you need the confirmation of the Admin");
                 }
 
             } catch (Exception e) {
@@ -136,6 +149,16 @@ public class DoctorPageController implements Initializable {
 
     @FXML
     void loginShowPassword() {
+
+        if (login_checkBox.isSelected()) {
+            login_showpassword.setText(login_password.getText());
+            login_password.setVisible(false);
+            login_showpassword.setVisible(true);
+        } else {
+            login_password.setText(login_showpassword.getText());
+            login_password.setVisible(true);
+            login_showpassword.setVisible(false);
+        }
 
     }
 
@@ -307,6 +330,7 @@ public class DoctorPageController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         registerDoctorID();
+        userList();
 
     }
 

@@ -45,7 +45,11 @@
                   <CheckBox fx:id="login_checkBox" layoutX="39.0" layoutY="255.0" mnemonicParsing="false" onAction="#loginShowPassword" text="Show password" />
                   <Button fx:id="login_loginBtn" layoutX="40.0" layoutY="287.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="40.0" prefWidth="250.0" styleClass="btn-1" stylesheets="@../design/PageDesign.css" text="Login" />
                   <FontAwesomeIcon fill="#188ba7" layoutX="125.0" layoutY="427.0" size="6em" />
-                  <ComboBox fx:id="login_user" layoutX="90.0" layoutY="459.0" onAction="#switchPage" prefHeight="30.0" prefWidth="150.0" promptText="Select User" />
+                  <ComboBox fx:id="login_user" layoutX="90.0" layoutY="459.0" onAction="#switchPage" prefHeight="30.0" prefWidth="150.0" promptText="Select User" stylesheets="@../design/PageDesign.css">
+                     <styleClass>
+                        <String fx:value="radius" />
+                        <String fx:value="white-bg" />
+                     </styleClass></ComboBox>
                   <Label layoutX="69.0" layoutY="501.0" text="Have no account yet?" />
                   <Hyperlink fx:id="login_registerHere" layoutX="180.0" layoutY="498.0" onAction="#switchForm" text="Register here!" />
                </children>
