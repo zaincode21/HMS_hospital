@@ -273,8 +273,23 @@ public class FXMLDocumentController implements Initializable {
                 e.printStackTrace();
             }
 
-        } else if (login_user.getSelectionModel().getSelectedItem() == "Patient Portal") {
+        } else if (login_user.getSelectionModel().getSelectedItem() == "patient Portal") {
+              try {
 
+                Parent root = FXMLLoader.load(getClass().getResource("PatientPage.fxml"));
+                Stage stage = new Stage();
+
+                stage.setTitle("Hospital management system");
+                
+                stage.setMinWidth(340);
+                stage.setMinHeight(580);
+
+                stage.setScene(new Scene(root));
+
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
          login_user.getScene().getWindow().hide();
     }

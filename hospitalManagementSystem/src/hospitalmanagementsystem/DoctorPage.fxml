@@ -19,7 +19,7 @@
          <children>
             <AnchorPane fx:id="login_form" prefHeight="550.0" prefWidth="330.0" styleClass="white-bg" stylesheets="@../design/PageDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <FontAwesomeIcon fill="#76289d" glyphName="USER_MD" layoutX="130.0" layoutY="91.0" size="5em" />
+                  <FontAwesomeIcon fill="#76289d" glyphName="USER" layoutX="130.0" layoutY="91.0" size="5em" />
                   <Label layoutX="97.0" layoutY="94.0" text="Login Account" textFill="#76289d">
                      <font>
                         <Font name="Tahoma" size="20.0" />

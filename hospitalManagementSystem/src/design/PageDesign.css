@@ -28,7 +28,16 @@
     -fx-border-color: linear-gradient( #188ba7, #46308e);
     -fx-border-width:1px;
 }
-
+.textfield-3{
+    -fx-border-color:#000;
+    -fx-border-width: .7px;
+    -fx-font-family: Tahoma;
+}
+.textfield-3:focused{
+   
+    -fx-border-color: linear-gradient(#a31336, #861d2a);
+    -fx-border-width:1px;
+}
 .btn-1{
 
     -fx-background-color: linear-gradient(#188ba7, #306090);
@@ -58,4 +67,19 @@
 .btn-2:hover{
 
     -fx-background-color: linear-gradient(#c512c5, #76289d);
+}
+.btn-3{
+
+    -fx-background-color: linear-gradient(#a31336, #861d2a);
+    -fx-background-radius:5;
+    -fx-background-insets: 0;
+    -fx-font-family:Arial;
+    -fx-text-fill:#fff;
+    -fx-text-fill: white;
+    -fx-font: 14px;
+
+}
+.btn-3:hover{
+
+    -fx-background-color: linear-gradient(#bf0d3c, #9d1022);
 }

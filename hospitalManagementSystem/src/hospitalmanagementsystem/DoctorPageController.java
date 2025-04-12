@@ -100,12 +100,22 @@ public class DoctorPageController implements Initializable {
     void loginAccount() {
         if (login_doctorID.getText().isEmpty()
                 || login_password.getText().isEmpty()) {
-            alert.errorMessage("Incorrect Username/password");
+            alert.errorMessage("Incorrect Doctor ID/password");
         } else {
             String sql = "SELECT * FROM doctor WHERE doctor_id = ? AND password = ? AND delete_date  is NULL";
             connect = Database.connectDB();
 
             try {
+                if (!login_password.isVisible()) {
+                    if (!login_showpassword.getText().equals(login_password.getText())) {
+                        login_showpassword.setText(login_password.getText());
+                    } else {
+                        if (!login_showpassword.getText().equals(login_password.getText())) {
+                            login_password.setText(login_showpassword.getText());
+                        }
+                    }
+                }
+                //CHECK IF STATUS OF THE DOCTOR IS CONFIRM
                 String checkStatus = "SELECT status FROM doctor WHERE doctor_id = '"
                         + login_doctorID.getText() + "'AND password = '"
                         + login_password.getText() + "' AND status='Confirm'";
@@ -114,8 +124,7 @@ public class DoctorPageController implements Initializable {
                 result = prepare.executeQuery();
 
                 if (result.next()) {
-                    alert.errorMessage("Need the confirmition of the admin");
-                    
+
                     if (!login_password.isVisible()) {
                         if (!login_showpassword.getText().equals(login_password.getText())) {
                             login_showpassword.setText(login_password.getText());
@@ -125,7 +134,7 @@ public class DoctorPageController implements Initializable {
                             }
                         }
                     }
-                    
+                    alert.errorMessage("Need the confirmition of the admin");
                 } else {
                     prepare = connect.prepareStatement(sql);
                     prepare.setString(1, login_doctorID.getText());
@@ -134,9 +143,9 @@ public class DoctorPageController implements Initializable {
                     result = prepare.executeQuery();
 
                     if (result.next()) {
-                        alert.successMessage("LOgin Succesfully");
+                        alert.successMessage("Login Succesfully");
                     } else {
-                        alert.errorMessage("Incorrect Username/Password");
+                        alert.errorMessage("Incorrect Doctor ID /Password");
                     }
                 }
 
@@ -311,6 +320,23 @@ public class DoctorPageController implements Initializable {
             }
 
         } else if (login_user.getSelectionModel().getSelectedItem() == "Patient Portal") {
+
+            try {
+
+                Parent root = FXMLLoader.load(getClass().getResource("PatientPage.fxml"));
+                Stage stage = new Stage();
+
+                stage.setTitle("Hospital management system");
+
+                stage.setMinWidth(340);
+                stage.setMinHeight(580);
+
+                stage.setScene(new Scene(root));
+
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         }
         login_user.getScene().getWindow().hide();
