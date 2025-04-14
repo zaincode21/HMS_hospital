@@ -120,6 +120,8 @@ public class FXMLDocumentController implements Initializable {
                 result = prepare.executeQuery();
 
                 if (result.next()) {
+                    
+                    Data.admin_username = login_usename.getText();
                     alert.successMessage("Login successfully!");
                     
                     Parent root = FXMLLoader.load(getClass().getResource("AdminMForm.fxml"));

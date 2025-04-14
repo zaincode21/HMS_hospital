@@ -18,8 +18,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospitalmanagementsystem.AdminMainFormController">
    <children>
       <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -81,7 +80,7 @@
                         <Line endX="92.99998474121094" layoutX="103.0" layoutY="138.0" startX="-89.00000762939453" stroke="WHITE" />
                         <FontAwesomeIcon fill="#40bfdb" glyphName="HOSPITAL_ALT" layoutX="73.0" layoutY="530.0" size="10em" AnchorPane.bottomAnchor="28.0952364603678" AnchorPane.leftAnchor="73.0" />
                         <Label layoutX="15.0" layoutY="150.0" text="Feature" textFill="WHITE" />
-                        <Button fx:id="dashboard_btn" alignment="CENTER_RIGHT" layoutX="9.0" layoutY="170.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Dashboard">
+                        <Button fx:id="dashboard_btn" alignment="CENTER_RIGHT" layoutX="9.0" layoutY="170.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Dashboard">
                            <styleClass>
                               <String fx:value="nav-btn-1" />
                               <String fx:value="radius" />
@@ -90,7 +89,7 @@
                               <FontAwesomeIcon glyphName="DASHBOARD" />
                            </graphic>
                         </Button>
-                        <Button fx:id="doctors_btn" layoutX="10.0" layoutY="222.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Doctor">
+                        <Button fx:id="doctors_btn" layoutX="10.0" layoutY="222.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Doctor">
                            <styleClass>
                               <String fx:value="nav-btn-1" />
                               <String fx:value="radius" />
@@ -99,7 +98,7 @@
                               <FontAwesomeIcon glyphName="USER_MD" />
                            </graphic>
                         </Button>
-                        <Button fx:id="patients_btn" alignment="TOP_RIGHT" layoutX="10.0" layoutY="270.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Patient">
+                        <Button fx:id="patients_btn" alignment="TOP_RIGHT" layoutX="10.0" layoutY="270.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Patient">
                            <styleClass>
                               <String fx:value="nav-btn-1" />
                               <String fx:value="radius" />
@@ -108,7 +107,7 @@
                               <FontAwesomeIcon glyphName="USER" />
                            </graphic>
                         </Button>
-                        <Button fx:id="appointments_btn" alignment="TOP_RIGHT" layoutX="11.0" layoutY="322.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Appointment">
+                        <Button fx:id="appointments_btn" alignment="TOP_RIGHT" layoutX="11.0" layoutY="322.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Appointment">
                            <styleClass>
                               <String fx:value="nav-btn-1" />
                               <String fx:value="radius" />
@@ -117,7 +116,7 @@
                               <FontAwesomeIcon glyphName="CLIPBOARD" />
                            </graphic>
                         </Button>
-                        <Button fx:id="payment_btn" alignment="TOP_RIGHT" layoutX="11.0" layoutY="371.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Payment">
+                        <Button fx:id="payment_btn" alignment="TOP_RIGHT" layoutX="11.0" layoutY="371.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Payment">
                            <styleClass>
                               <String fx:value="nav-btn-1" />
                               <String fx:value="radius" />
@@ -127,7 +126,7 @@
                            </graphic>
                         </Button>
                         <Label layoutX="11.0" layoutY="435.0" text="Profile" textFill="WHITE" />
-                        <Button fx:id="profile_btn" alignment="TOP_RIGHT" layoutX="8.0" layoutY="459.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Setting">
+                        <Button fx:id="profile_btn" alignment="TOP_RIGHT" layoutX="8.0" layoutY="459.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Setting">
                            <styleClass>
                               <String fx:value="nav-btn-1" />
                               <String fx:value="radius" />
@@ -307,9 +306,9 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="Doctors_form" layoutX="161.0" layoutY="146.0" prefHeight="566.6666666666666" prefWidth="884.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="Doctors_form" layoutX="4.0" layoutY="7.0" prefHeight="566.6666666666666" prefWidth="884.0" visible="false" AnchorPane.bottomAnchor="11.333333333333371" AnchorPane.leftAnchor="9.333333333333334" AnchorPane.rightAnchor="9.333333333333371" AnchorPane.topAnchor="12.0">
                            <children>
-                              <AnchorPane layoutX="5.0" prefHeight="560.0" prefWidth="878.0" stylesheets="@../design/MainFormDesign.css">
+                              <AnchorPane layoutX="5.0" prefHeight="554.0" prefWidth="873.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="14.0">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="shadow" />
@@ -321,7 +320,7 @@
                                           <Font size="16.0" />
                                        </font>
                                     </Label>
-                                    <TableView fx:id="Doctors_tableView" layoutX="6.0" layoutY="42.0" prefHeight="511.0" prefWidth="867.0" stylesheets="@../design/MainFormDesign.css">
+                                    <TableView fx:id="Doctors_tableView" layoutX="6.0" layoutY="42.0" prefHeight="511.0" prefWidth="867.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="42.0">
                                       <columns>
                                         <TableColumn fx:id="Doctors_col_doctorID" prefWidth="63.999969482421875" text="Doctor ID" />
                                         <TableColumn fx:id="Doctors_col_name" prefWidth="124.0" text="Name" />
@@ -333,6 +332,9 @@
                                           <TableColumn fx:id="Doctors_col_status" prefWidth="88.66668701171875" text="Status" />
                                           <TableColumn fx:id="Doctors_col_active" prefWidth="85.3333740234375" text="Active" />
                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
                                     </TableView>
                                  </children>
                               </AnchorPane>
