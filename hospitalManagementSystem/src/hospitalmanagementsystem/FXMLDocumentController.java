@@ -128,6 +128,9 @@ public class FXMLDocumentController implements Initializable {
                     stage.setTitle("Hospital Management System | Admin Portal");
                     stage.setScene(new Scene(root));
                     stage.show();
+                    
+                    // TO HIDE YOUR ADMIN PAGE (LOGIN FORM)
+                    login_loginBtn.getScene().getWindow().hide();
 
                 } else {
                     alert.errorMessage("incorrect USername/password");

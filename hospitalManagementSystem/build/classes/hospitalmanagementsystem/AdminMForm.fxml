@@ -61,60 +61,84 @@
                <left>
                   <AnchorPane prefHeight="555.0" prefWidth="216.0" styleClass="bg-color-1" stylesheets="@../design/MainFormDesign.css" BorderPane.alignment="CENTER">
                      <children>
-                        <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="80.0" layoutY="76.0" size="6em" />
-                        <Label layoutX="14.0" layoutY="97.0" text="Admin ID:" textFill="WHITE" />
-                        <Label layoutX="71.0" layoutY="97.0" text="1" textFill="WHITE">
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="80.0" layoutY="63.0" size="6em" />
+                        <Label layoutX="14.0" layoutY="84.0" text="Admin ID:" textFill="WHITE" />
+                        <Label layoutX="71.0" layoutY="84.0" text="1" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="15.0" layoutY="122.0" text="Username:" textFill="WHITE" />
-                        <Label layoutX="73.0" layoutY="122.0" text="Sergezain" textFill="WHITE">
+                        <Label layoutX="15.0" layoutY="109.0" text="Username:" textFill="WHITE" />
+                        <Label layoutX="73.0" layoutY="109.0" text="Sergezain" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
-                        <Line endX="92.99998474121094" layoutX="103.0" layoutY="151.0" startX="-89.00000762939453" stroke="WHITE" />
-                        <Label layoutX="15.0" layoutY="163.0" text="Feature" textFill="WHITE" />
-                        <Button layoutX="9.0" layoutY="183.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Dashboard">
-                           <styleClass>
-                              <String fx:value="nav-btn-1" />
-                              <String fx:value="radius" />
-                           </styleClass>
-                        </Button>
-                        <Button layoutX="10.0" layoutY="235.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Doctor">
-                           <styleClass>
-                              <String fx:value="nav-btn-1" />
-                              <String fx:value="radius" />
-                           </styleClass>
-                        </Button>
-                        <Button layoutX="10.0" layoutY="283.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Patient">
-                           <styleClass>
-                              <String fx:value="nav-btn-1" />
-                              <String fx:value="radius" />
-                           </styleClass>
-                        </Button>
-                        <Button layoutX="11.0" layoutY="335.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Appointment">
-                           <styleClass>
-                              <String fx:value="nav-btn-1" />
-                              <String fx:value="radius" />
-                           </styleClass>
-                        </Button>
-                        <Label layoutX="16.0" layoutY="391.0" text="Profile" textFill="WHITE" />
-                        <Button layoutX="10.0" layoutY="411.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Setting">
-                           <styleClass>
-                              <String fx:value="nav-btn-1" />
-                              <String fx:value="radius" />
-                           </styleClass>
-                        </Button>
+                        <Line endX="92.99998474121094" layoutX="103.0" layoutY="138.0" startX="-89.00000762939453" stroke="WHITE" />
                         <FontAwesomeIcon fill="#40bfdb" glyphName="HOSPITAL_ALT" layoutX="73.0" layoutY="530.0" size="5em" AnchorPane.bottomAnchor="28.0952364603678" AnchorPane.leftAnchor="73.0" />
+                        <Label layoutX="15.0" layoutY="150.0" text="Feature" textFill="WHITE" />
+                        <Button alignment="CENTER_RIGHT" layoutX="9.0" layoutY="170.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Dashboard">
+                           <styleClass>
+                              <String fx:value="nav-btn-1" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="DASHBOARD" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="222.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Doctor">
+                           <styleClass>
+                              <String fx:value="nav-btn-1" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="USER_MD" />
+                           </graphic>
+                        </Button>
+                        <Button alignment="TOP_RIGHT" layoutX="10.0" layoutY="270.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Patient">
+                           <styleClass>
+                              <String fx:value="nav-btn-1" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="USER" />
+                           </graphic>
+                        </Button>
+                        <Button alignment="TOP_RIGHT" layoutX="11.0" layoutY="322.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Appointment">
+                           <styleClass>
+                              <String fx:value="nav-btn-1" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="CLIPBOARD" />
+                           </graphic>
+                        </Button>
+                        <Button alignment="TOP_RIGHT" layoutX="11.0" layoutY="371.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Payment">
+                           <styleClass>
+                              <String fx:value="nav-btn-1" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="CREDIT_CARD" />
+                           </graphic>
+                        </Button>
+                        <Label layoutX="11.0" layoutY="435.0" text="Profile" textFill="WHITE" />
+                        <Button alignment="TOP_RIGHT" layoutX="8.0" layoutY="459.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../design/MainFormDesign.css" text="Setting">
+                           <styleClass>
+                              <String fx:value="nav-btn-1" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="COGS" />
+                           </graphic>
+                        </Button>
                      </children>
                   </AnchorPane>
                </left>
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="192.0" layoutY="167.0" prefHeight="566.6666666666666" prefWidth="884.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutX="192.0" layoutY="167.0" prefHeight="566.6666666666666" prefWidth="884.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane layoutX="14.0" layoutY="8.0" prefHeight="159.0" prefWidth="859.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
                                  <styleClass>
@@ -209,7 +233,7 @@
                                     </ScrollPane>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane layoutX="14.0" layoutY="184.0" prefHeight="376.0" prefWidth="859.0" stylesheets="@../design/MainFormDesign.css" visible="false" AnchorPane.bottomAnchor="6.666666666666629" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="184.0">
+                              <AnchorPane layoutX="14.0" layoutY="184.0" prefHeight="376.0" prefWidth="859.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="6.666666666666629" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="184.0">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="shadow" />
@@ -279,6 +303,108 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
+                        <AnchorPane layoutX="161.0" layoutY="146.0" prefHeight="566.6666666666666" prefWidth="884.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="5.0" prefHeight="560.0" prefWidth="878.0" stylesheets="@../design/MainFormDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="7.0" layoutY="7.0" styleClass="header-1" stylesheets="@../design/MainFormDesign.css" text="Doctors">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView layoutX="6.0" layoutY="42.0" prefHeight="511.0" prefWidth="867.0" stylesheets="@../design/MainFormDesign.css">
+                                      <columns>
+                                        <TableColumn prefWidth="63.999969482421875" text="Doctor ID" />
+                                        <TableColumn prefWidth="124.0" text="Name" />
+                                          <TableColumn prefWidth="59.33331298828125" text="Gender" />
+                                          <TableColumn prefWidth="138.6666259765625" text="Contact number" />
+                                          <TableColumn prefWidth="111.33331298828125" text="Address Number" />
+                                          <TableColumn prefWidth="104.0" text="Specielizetion" />
+                                          <TableColumn prefWidth="86.66668701171875" text="Address" />
+                                          <TableColumn prefWidth="88.66668701171875" text="Status" />
+                                          <TableColumn prefWidth="85.3333740234375" text="Active" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="566.6666666666666" prefWidth="884.0" visible="false" AnchorPane.bottomAnchor="11.333333333333371" AnchorPane.leftAnchor="9.333333333333334" AnchorPane.rightAnchor="9.333333333333371" AnchorPane.topAnchor="12.0">
+                           <children>
+                              <AnchorPane layoutX="5.0" prefHeight="560.0" prefWidth="878.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="14.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="7.0" layoutY="7.0" styleClass="header-1" stylesheets="@../design/MainFormDesign.css" text="Patients">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView layoutX="6.0" layoutY="42.0" prefHeight="511.0" prefWidth="867.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="42.0">
+                                       <columns>
+                                          <TableColumn prefWidth="63.999969482421875" text="Patient ID" />
+                                          <TableColumn prefWidth="135.33331298828125" text="Name" />
+                                          <TableColumn prefWidth="63.333343505859375" text="Gender" />
+                                          <TableColumn prefWidth="98.66671752929688" text="Contact number" />
+                                          <TableColumn prefWidth="105.3333740234375" text="Description" />
+                                          <TableColumn prefWidth="63.33331298828125" text="Date" />
+                                          <TableColumn prefWidth="109.3333740234375" text="Date_modify" />
+                                          <TableColumn prefWidth="90.6666259765625" text="Date_delete" />
+                                          <TableColumn minWidth="0.0" prefWidth="69.333251953125" text="Status" />
+                                          <TableColumn minWidth="0.0" prefWidth="67.333251953125" text="Action" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="19.0" layoutY="22.0" prefHeight="566.6666666666666" prefWidth="884.0" visible="false" AnchorPane.leftAnchor="9.333333333333334" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="5.0" prefHeight="560.0" prefWidth="878.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="14.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="7.0" layoutY="7.0" styleClass="header-1" stylesheets="@../design/MainFormDesign.css" text="Appointment">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView layoutX="6.0" layoutY="42.0" prefHeight="511.0" prefWidth="867.0" stylesheets="@../design/MainFormDesign.css" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="42.0">
+                                       <columns>
+                                          <TableColumn prefWidth="98.0000079870224" text="Appointment ID" />
+                                          <TableColumn prefWidth="90.0000228881836" text="Name" />
+                                          <TableColumn prefWidth="63.333343505859375" text="Gender" />
+                                          <TableColumn prefWidth="98.66671752929688" text="Contact" />
+                                          <TableColumn prefWidth="105.3333740234375" text="Description" />
+                                          <TableColumn prefWidth="63.33331298828125" text="Date" />
+                                          <TableColumn prefWidth="109.3333740234375" text="Date_modify" />
+                                          <TableColumn prefWidth="90.6666259765625" text="Date_delete" />
+                                          <TableColumn minWidth="0.0" prefWidth="69.333251953125" text="Status" />
+                                          <TableColumn minWidth="0.0" prefWidth="67.333251953125" text="Action" />
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="156.0" layoutY="159.0" prefHeight="566.6666666666666" prefWidth="884.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
                </center>
