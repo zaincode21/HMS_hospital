@@ -66,9 +66,10 @@ and open the template in the editor.
     -fx-text-fill:#fff;
     -fx-font-family:Arial;
     -fx-cursor:hand;
+    -fx-font-size:14px;
 }
 .btn-1:hover{
-    -fx-background:#fff;
+    -fx-background:#ffffff;
     -fx-text-fill:#000;
 }
 .nav-btn-2{

@@ -121,6 +121,13 @@ public class FXMLDocumentController implements Initializable {
 
                 if (result.next()) {
                     alert.successMessage("Login successfully!");
+                    
+                    Parent root = FXMLLoader.load(getClass().getResource("AdminMForm.fxml"));
+                    Stage stage = new Stage();
+                    
+                    stage.setTitle("Hospital Management System | Admin Portal");
+                    stage.setScene(new Scene(root));
+                    stage.show();
 
                 } else {
                     alert.errorMessage("incorrect USername/password");
