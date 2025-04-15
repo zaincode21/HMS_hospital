@@ -60,3 +60,18 @@ and open the template in the editor.
     -fx-font-family: Arial;
     -fx-text-fill: #fff;
 }
+.btn-2{
+
+    -fx-background-color: linear-gradient( #a413a1, #64308e);
+    -fx-background-radius:5;
+    -fx-background-insets: 0;
+    -fx-font-family:Arial;
+    -fx-text-fill:#fff;
+    -fx-text-fill: white;
+    -fx-font: 14px;
+
+}
+.btn-2:hover{
+
+    -fx-background-color: linear-gradient(#c512c5, #76289d);
+}
