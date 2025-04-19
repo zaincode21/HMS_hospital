@@ -10,7 +10,11 @@ package hospitalmanagementsystem;
  * @author serge
  */
 public class Data {
+//    public static String admin_username;
+    public static Integer admin_id;
     public static String admin_username;
     
-    public static Integer admin_id;
+    public static String doctor_id;
+    public static String doctor_name;
+    
 }
