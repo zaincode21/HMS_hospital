@@ -12,7 +12,7 @@ import javafx.scene.control.ButtonType;
 
 /**
  *
- * @author serge
+ * @author WINDOWS 10
  */
 public class AlertMessage {
 
@@ -51,4 +51,3 @@ public class AlertMessage {
     }
 
 }
-

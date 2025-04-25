@@ -5,16 +5,17 @@
  */
 package hospitalmanagementsystem;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
- * @author serge
+ * @author WINDOWS 10
  */
 public class AppointmentData {
 
+    private Integer id;
     private Integer appointmentID;
-    private String patientID;
+    private Integer patientID;
     private String name;
     private String gender;
     private String description;
@@ -27,8 +28,31 @@ public class AppointmentData {
     private Date dateDelete;
     private String status;
     private String doctorID;
-    private String specialezed;
+    private String specialized;
     private Date schedule;
+
+    public AppointmentData(Integer id, Integer appointmentID, String name, String gender,
+            Long mobileNumber, String description, String diagnosis, String treatment, String address,
+            String doctorID, String specialized,
+            Date date, Date dateModify, Date dateDelete, String status, Date schedule) {
+        this.id = id;
+        this.appointmentID = appointmentID;
+        this.name = name;
+        this.gender = gender;
+        this.mobileNumber = mobileNumber;
+        this.description = description;
+        this.diagnosis = diagnosis;
+        this.treatment = treatment;
+        this.address = address;
+        this.doctorID = doctorID;
+        this.specialized = specialized;
+        this.date = date;
+        this.dateModify = dateModify;
+        this.dateDelete = dateDelete;
+        this.status = status;
+        this.schedule = schedule;
+
+    }
 
     public AppointmentData(Integer appointmentID, String name, String gender,
             Long mobileNumber, String description, String diagnosis, String treatment, String address,
@@ -47,10 +71,30 @@ public class AppointmentData {
         this.dateDelete = dateDelete;
         this.status = status;
         this.schedule = schedule;
+
     }
 
-    AppointmentData(int aInt, String string, String string0, long aLong, String string1, java.sql.Date date, java.sql.Date date0, java.sql.Date date1, String string2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public AppointmentData(Integer appointmentID, String name,
+            String description, Date date, String status) {
+        this.appointmentID = appointmentID;
+        this.name = name;
+        this.description = description;
+        this.date = date;
+        this.status = status;
+    }
+
+    public AppointmentData(Integer appointmentID, String description,
+            String diagnosis, String treatment, String doctorID, Date schedule) {
+        this.appointmentID = appointmentID;
+        this.description = description;
+        this.diagnosis = diagnosis;
+        this.treatment = treatment;
+        this.doctorID = doctorID;
+        this.schedule = schedule;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public Integer getAppointmentID() {
@@ -73,10 +117,34 @@ public class AppointmentData {
         return description;
     }
 
-    public Date GetDate() {
+    public String getDiagnosis() {
+        return diagnosis;
+    }
+
+    public String getTreatment() {
+        return treatment;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getDoctorID() {
+        return doctorID;
+    }
+
+    public String getSpecialized() {
+        return specialized;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Date getDateModify() {
         return dateModify;
     }
- 
+
     public Date getDateDelete() {
         return dateDelete;
     }
@@ -84,4 +152,9 @@ public class AppointmentData {
     public String getStatus() {
         return status;
     }
+
+    public Date getSchedule() {
+        return schedule;
+    }
+
 }

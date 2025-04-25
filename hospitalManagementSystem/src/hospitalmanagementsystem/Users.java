@@ -7,9 +7,10 @@ package hospitalmanagementsystem;
 
 /**
  *
- * @author serge
+ * @author WINDOWS 10
  */
 public class Users {
-    
-    public static String [] user = {"Admin portal", "Doctor Portal", "patient Portal"};
+
+    public static String[] user = {"Admin Portal", "Doctor Portal", "Patient Portal"};
+
 }

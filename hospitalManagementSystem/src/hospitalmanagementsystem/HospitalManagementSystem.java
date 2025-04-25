@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author serge
+ * @author WINDOWS 10
  */
 public class HospitalManagementSystem extends Application {
     
@@ -22,10 +22,12 @@ public class HospitalManagementSystem extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
         Scene scene = new Scene(root);
+        
         stage.setMinWidth(340);
         stage.setMinHeight(580);
         
         stage.setTitle("Hospital Management System");
+        
         stage.setScene(scene);
         stage.show();
     }

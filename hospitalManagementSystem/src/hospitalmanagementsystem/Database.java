@@ -10,24 +10,23 @@ import java.sql.DriverManager;
 
 /**
  *
- * @author serge
+ * @author WINDOWS 10
  */
 public class Database {
-    
-    
+
     public static Connection connectDB() {
+
         try {
+
             Class.forName("com.mysql.jdbc.Driver");
+
             Connection connect
-                    = DriverManager.getConnection("jdbc:mysql://localhost/hospital", "root", ""); // root IS OUR DEFAULT USERNAME AND EMPTY OR NULL OR BLANK TO OUR PASSWORD
+                    = DriverManager.getConnection("jdbc:mysql://localhost/hms_clinic", "root", ""); // root IS OUR DEFAULT USERNAME AND EMPTY OR NULL OR BLANK TO OUR PASSWORD
             return connect;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
-    }  
-
-    static Connection connectionsDB() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
 }
