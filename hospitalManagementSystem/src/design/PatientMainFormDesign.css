@@ -32,7 +32,7 @@ and open the template in the editor.
 }
 
 .bg-color-2{
-    -fx-background-color: linear-gradient(to bottom right, #a31336, #861d2a);
+    -fx-background-color: linear-gradient(to bottom right, #188ba7, #306090);
 }
 
 .nav-btn-2{
@@ -53,10 +53,10 @@ and open the template in the editor.
 .table-view{
     -fx-padding: 0;
     -fx-border-radius: 8px;
-    -fx-border-color: linear-gradient(to bottom right, #a31336, #861d2a);
+    -fx-border-color: linear-gradient (to bottom right, #188ba7, #306090);
 }
 .table-view .column-header-background{
-    -fx-background-color: linear-gradient(to bottom right, #a31336, #861d2a);
+    -fx-background-color: linear-gradient(to bottom right, #188ba7, #306090);
     -fx-background-insets: 0 0 0 0;
     -fx-background-radius: 8px 8px 0 0 ;
 }
@@ -70,14 +70,14 @@ and open the template in the editor.
 }
 
 .btn-3{
-    -fx-background-color: linear-gradient(to bottom right, #a31336, #861d2a);
+    -fx-background-color: linear-gradient(to bottom right, #188ba7, #306090);
     -fx-cursor: hand;
     -fx-text-fill: #fff;
     -fx-font-size: 14px;
     -fx-font-family: Arial;
 }
 .btn-3:hover{
-    -fx-background-color: linear-gradient(to bottom right, #bf0d3c, #9d1022);
+    -fx-background-color: linear-gradient(to bottom right, #188ba7, #306090);
 }
 
 .textfield-2{
