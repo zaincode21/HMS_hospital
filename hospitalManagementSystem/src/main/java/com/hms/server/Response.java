@@ -1,13 +1,9 @@
 package com.hms.server;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Response implements Serializable {
     private ResponseStatus status;
-    private String message;
-    private Map<String, Object> parameters = new HashMap<>();
     private Object data;
 
     public Response(ResponseStatus status) {
@@ -23,23 +19,6 @@ public class Response implements Serializable {
         return status;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public Response addParameter(String key, Object value) {
-        parameters.put(key, value);
-        return this;
-    }
-
-    public Object getParameter(String key) {
-        return parameters.get(key);
-    }
-
     public void setData(Object data) {
         this.data = data;
     }
@@ -47,4 +26,4 @@ public class Response implements Serializable {
     public Object getData() {
         return data;
     }
-}
+} 

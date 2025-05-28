@@ -3,6 +3,7 @@ package hospitalmanagementsystem;
 import com.hms.server.Request;
 import com.hms.server.Response;
 import com.hms.server.ResponseStatus;
+import com.hms.server.RequestType;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;

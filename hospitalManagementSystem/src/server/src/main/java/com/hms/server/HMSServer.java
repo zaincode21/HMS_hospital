@@ -1,7 +1,6 @@
 package com.hms.server;
 
 import com.hms.server.service.AuthenticationService;
-import com.hms.server.service.ExportService;
 import com.hms.server.util.HibernateUtil;
 import org.hibernate.Session;
 
@@ -16,12 +15,10 @@ public class HMSServer {
     private static final int PORT_2 = 6000;
     private final ExecutorService executorService;
     private final AuthenticationService authService;
-    private final ExportService exportService;
 
     public HMSServer() {
         this.executorService = Executors.newFixedThreadPool(10);
         this.authService = new AuthenticationService();
-        this.exportService = new ExportService();
     }
 
     public void start() {
@@ -61,9 +58,6 @@ public class HMSServer {
                     break;
                 case VERIFY_OTP:
                     response = authService.verifyOTP(request);
-                    break;
-                case EXPORT:
-                    response = exportService.handleExport(request);
                     break;
                 default:
                     response = new Response(ResponseStatus.ERROR, "Unknown request type");
