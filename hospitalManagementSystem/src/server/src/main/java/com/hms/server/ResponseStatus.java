@@ -1,7 +1,0 @@
-package com.hms.server;
-
-public enum ResponseStatus {
-    SUCCESS,
-    FAILURE,
-    ERROR
-}
