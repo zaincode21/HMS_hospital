@@ -42,3 +42,5 @@ nbdist/
 
 # virtual machine crash logs
 hs_err_pid*
+config.bat
+node_modules
